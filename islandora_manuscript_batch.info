@@ -1,10 +1,10 @@
-name = Islandora Book Batch
+name = Islandora Manuscript Batch
 description = "Batch ingest objects"
 package = Islandora
 version = 7.x-1.6
 core = 7.x
 dependencies[] = islandora_batch
-dependencies[] = islandora_book
-files[] = includes/islandora_book_batch.inc
+dependencies[] = islandora_manuscript
+files[] = includes/islandora_manuscript_batch.inc
 php = 5.3
 
