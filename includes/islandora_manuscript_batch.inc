@@ -133,7 +133,7 @@ class IslandoraManuscriptBatch extends IslandoraScanBatch {
  * mimetype for the datastream.
  * @todo Should be moved into islandora_batch.
  */
-class IslandoraFlatBatchObject extends IslandoraScanBatchObject {
+class IslandoraManuscriptFlatBatchObject extends IslandoraScanBatchObject {
   /**
    * Function batchProcess.
    */
@@ -359,7 +359,7 @@ EOXML;
 /**
  * Class IslandoraManuscriptBatchObject.
  */
-class IslandoraManuscriptManuscriptBatchObject extends IslandoraFlatBatchObject {
+class IslandoraManuscriptManuscriptBatchObject extends IslandoraManuscriptFlatBatchObject {
   /**
    * Function class constructor.
    */
@@ -424,7 +424,7 @@ class IslandoraManuscriptManuscriptBatchObject extends IslandoraFlatBatchObject 
 /**
  * Class IslandoraManuscriptPageBatchObject.
  */
-class IslandoraManuscriptPageBatchObject extends IslandoraFlatBatchObject {
+class IslandoraManuscriptPageBatchObject extends IslandoraManuscriptFlatBatchObject {
   protected $parentId;
   protected $sequenceNumber;
 
