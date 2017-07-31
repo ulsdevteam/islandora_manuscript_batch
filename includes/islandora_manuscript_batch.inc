@@ -407,6 +407,9 @@ class IslandoraManuscriptManuscriptBatchObject extends IslandoraFlatBatchObject 
     if (isset($this->preprocessorParameters['create_pdfs']) && $this->preprocessorParameters['create_pdfs']) {
       islandora_paged_content_set_pdf_flag($this);
     }
+    if (isset($this->preprocessorParameters['aggregate_ocr']) && $this->preprocessorParameters['aggregate_ocr']) {
+      islandora_paged_content_set_ocr_flag($this);
+    }
     if (isset($this->preprocessorParameters['page_progression']) && $this->preprocessorParameters['page_progression']) {
       islandora_paged_content_set_page_progression($this, $this->preprocessorParameters['page_progression']);
     }
@@ -475,7 +478,7 @@ class IslandoraManuscriptPageBatchObject extends IslandoraFlatBatchObject {
     islandora_paged_content_set_relationship($rels_ext, FEDORA_RELS_EXT_URI, 'isMemberOf', $this->parentId);
     // Add content model relationship.
     $this->models = 'islandora:manuscriptPageCModel';
-    if (isset($this->preprocessorParameters['generate_ocr'])) {
+    if (module_exists('islandora_ocr') && isset($this->preprocessorParameters['generate_ocr'])) {
       module_load_include('inc', 'islandora_ocr', 'includes/derivatives');
       islandora_ocr_set_generate_ocr_rels_ext_statement($this, $this->preprocessorParameters['generate_ocr']);
     }

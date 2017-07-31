@@ -144,7 +144,7 @@ function drush_islandora_manuscript_batch_preprocess() {
     $parameters['generate_ocr'] = FALSE;
   }
   else {
-    $parameters['generate_ocr'] = TRUE;
+    $parameters['generate_ocr'] = module_exists("islandora_ocr");
   }
 
   $preprocessor = new IslandoraManuscriptBatch($connection, $parameters);
