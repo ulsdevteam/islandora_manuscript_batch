@@ -22,7 +22,7 @@ function islandora_manuscript_batch_drush_command() {
         'description' => 'Either "directory" or "zip".',
         'required' => TRUE,
       ),
-      'target' => array(
+      'scan_target' => array(
         'description' => 'The target to directory or zip file to scan.',
         'required' => TRUE,
       ),
